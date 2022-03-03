@@ -1,3 +1,2 @@
-﻿  5555.cpp
-MSVCRTD.lib(exe_main.obj) : error LNK2019: main"int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
-C:\Users\김민준\source\repos\baekjoon\x64\Debug\baekjoon.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.
+﻿  10173.cpp
+  baekjoon.vcxproj -> C:\Users\김민준\source\repos\baekjoon\x64\Debug\baekjoon.exe
