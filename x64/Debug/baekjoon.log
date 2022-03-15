@@ -1,2 +1,3 @@
-﻿  10173.cpp
+﻿  1162.cpp
+C:\Users\김민준\source\repos\baekjoon\baekjoon\1162.cpp(38,9): warning C4244: 'return': 'unsigned __int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   baekjoon.vcxproj -> C:\Users\김민준\source\repos\baekjoon\x64\Debug\baekjoon.exe
