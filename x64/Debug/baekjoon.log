@@ -1,7 +1,2 @@
-﻿  10999.cpp
-C:\Users\김민준\source\repos\baekjoon\baekjoon\10999.cpp(43,38): warning C4244: 'return': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\김민준\source\repos\baekjoon\baekjoon\10999.cpp(65,14): warning C4244: '인수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\김민준\source\repos\baekjoon\baekjoon\10999.cpp(65,11): warning C4244: '인수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\김민준\source\repos\baekjoon\baekjoon\10999.cpp(69,21): warning C4244: '인수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\김민준\source\repos\baekjoon\baekjoon\10999.cpp(69,18): warning C4244: '인수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  3665.cpp
   baekjoon.vcxproj -> C:\Users\김민준\source\repos\baekjoon\x64\Debug\baekjoon.exe
