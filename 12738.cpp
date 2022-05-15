@@ -9,12 +9,21 @@ int main() {
 	int n;
 	cin >> n;
 
-	vector<int> v(n), dp(n, 1);
+	vector<int> v(n), dp;
 	for (auto& i : v) cin >> i;
 
-	for (int i = 1; i < n; i++)
-		for (int j = 0; j < i; j++)
-			if (v[j] < v[i]) dp[i] = max(dp[i], dp[j] + 1);
+	for (int i = 0; i < n; i++) {
+		if (dp.size() == 0 || dp.back() < v[i])dp.push_back(v[i]);
+		else {
+			int b = 0, e = dp.size();
+			while (b < e) {
+				int m = (b + e) / 2;
+				if (dp[m] >= v[i])e = m;
+				else b = m + 1;
+			}
+			dp[b] = v[i];
+		}
+	}
 	
-	cout << *max_element(dp.begin(), dp.end());
+	cout << dp.size();
 }
