@@ -22,9 +22,6 @@ int main()
 			reverse(b.begin(), b.end());
 			reverse(c.begin(), c.end());
 			v.push_back(a + b + c);
-			/*string t = (a + b + c);
-			if (ans == "") ans = t;
-			else t = ((ans < t) ? ans : t);*/
 		}
 	sort(v.begin(), v.end());
 	cout << v[0];
