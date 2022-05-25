@@ -1,20 +1,20 @@
 #include <iostream>
-#include <algorithm>
+#include <cmath>
 using namespace std;
-struct square {
-	int a, b, c, d;
-	friend istream& operator>>(istream &i, square &s) {
-		cin >> s.a >> s.b >> s.c >> s.d;
-		return i;
-	}
-};
 int main() {
-	ios::sync_with_stdio(false);
-	cin.tie(NULL);
+    cin.tie(0);
+    std::ios_base::sync_with_stdio(0);
 
-	square a, b;
-	cin >> a >> b;
-	if (a.a > b.a)swap(a, b);
-	if (a.a < b.a) cout << min(b.c - a.a, b.d - a.b) * min(b.c - a.a, b.d - a.b);
-	else cout << min();
+    int x, xx, y, yy;
+    int a, aa, b, bb;
+
+    cin >> x >> y >> xx >> yy;
+    cin >> a >> b >> aa >> bb;
+
+    int ans1 = max(aa, xx) - min(a, x);
+    int ans2 = max(bb, yy) - min(b, y);
+
+    int ans = max(ans1, ans2);
+
+    cout << ans * ans;
 }

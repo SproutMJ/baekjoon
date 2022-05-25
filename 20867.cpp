@@ -1,5 +1,4 @@
 #include <iostream>
-#include <queue>
 using namespace std;
 int main()
 {
@@ -8,10 +7,22 @@ int main()
 
 	int m, s, g;
 	cin >> m >> s >> g;
-	int a, b;
+	double a, b;
 	cin >> a >> b;
 	int l, r;
 	cin >> l >> r;
 
+	int lwait = l / a;
+	int rwait = r / b;
+	int ls = ((m % g) ? m / g + 1 : m / g);
+	int rs = ((m % s) ? m / s + 1 : m / s);
 
+	if (ls < rs) {
+		if (ls + lwait < rs + rwait) cout << "friskus";
+		else cout << "latmask";
+	}
+	else {
+		if (ls + lwait < rs + rwait) cout << "friskus";
+		else cout << "latmask";
+	}
 }
