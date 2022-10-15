@@ -10,5 +10,5 @@ int main() {
 	cin >> t;
 
 	double ans = (double)t / 2.0;
-	cout << (int)(ans * ans + 0.5) << "\n";
+	cout << (int)(ans * ans + 0.5);
 }
