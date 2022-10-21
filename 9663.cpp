@@ -1,31 +1,32 @@
-//#include <iostream>
-//#include <vector>
-//using namespace std;
-//vector<int> v(16, 0);
-//int num = 0, ans = 0;
-//
-//void queen(int y)
-//{
-//	if (y == num)
-//	{
-//		ans++;
-//		return;
-//	}
-//	for (int i = 1; i <= num; i++)
-//	{
-//		if (v[i] != 0 || )
-//		{
-//
-//		}
-//	}
-//}
-//int main()
-//{
-//	cin.tie(0);
-//	ios::sync_with_stdio(0);
-//
-//	cin >> num;
-//
-//	queen(0);
-//	cout << ans;
-//}
+#include <iostream>
+#include <queue>
+#include <algorithm>
+int ar[15];
+int ans, n;
+bool check(int cnt) {
+	for (int i = 0; i < cnt; i++) 
+		if(ar[cnt] == ar[i] || abs(cnt-i) == abs(ar[i]-ar[cnt]))
+			return false;
+	return true;
+}
+void bt(int cnt) {
+	if (cnt == n) {
+		ans++;
+		return;
+	}
+
+	for (int i = 0; i < n; i++) {
+		ar[cnt] = i;
+		if (check(cnt))
+			bt(cnt + 1);
+	}
+}
+using namespace std;
+int main() {
+	cin.tie(0);
+	std::ios_base::sync_with_stdio(0);
+
+	cin >> n;
+	bt(0);
+	cout << ans;
+}
