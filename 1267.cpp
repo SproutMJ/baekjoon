@@ -1,22 +1,27 @@
 #include <iostream>
 #include <queue>
-#include <climits>
-#include <tuple>
+#include <algorithm>
 using namespace std;
-int y(int val) {
-	return val / 30 + ((val % 30 != 0) ? 15 : 0);
-}
-int m(int val) {
-	return val / 60 + ((val % 60 != 0) ? 15 : 0);
-}
 int main() {
 	cin.tie(0);
-	ios::sync_with_stdio(0);
+	std::ios_base::sync_with_stdio(0);
 
-	int n;
-	vector<int> v(n);
-	for (auto& i : v) cin >> i;
+    int n, i, cost[20], y = 0, m = 0;
+    cin >> n;
 
-	int y, n;
-	
+    for (i = 0; i < n; i++) {
+        int cost;
+        cin >> cost;
+        y += cost / 30 + 1;
+        m += cost / 60 + 1;
+    }
+
+    y *= 10;
+    m *= 15;
+    if (y == m)
+        cout << "Y M " << y;
+    else if (y > m)
+        cout << "M " << m;
+    else
+        cout << "Y " << y;
 }
