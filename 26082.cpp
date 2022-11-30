@@ -6,11 +6,7 @@ int main() {
 	cin.tie(0);
 	std::ios_base::sync_with_stdio(0);
 
-	int n;
-	cin >> n;
-	while (n--) {
-		unsigned long long a;
-		cin >> a;
-		cout << a * a << "\n";
-	}
+	int a, b, c;
+	cin >> a >> b >> c;
+	cout << 3 * b * c / a;
 }
