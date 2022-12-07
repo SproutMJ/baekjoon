@@ -12,7 +12,7 @@ int main() {
 
 	for (int i = 0; i < n; i++) {
 		cin >> a >> b;
-		min = min > (a / b) ? (a / b) : min;
+		min = (min > (a / b) ? (a / b) : min);
 	}
 
 	cout << min * 1000 << "\n";
