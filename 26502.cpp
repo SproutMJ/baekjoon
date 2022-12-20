@@ -16,6 +16,18 @@ char f(char ch) {
 		return 'u';
 	case 'u':
 		return 'y';
+	case 'Y':
+		return 'A';
+	case 'A':
+		return 'E';
+	case 'E':
+		return 'I';
+	case 'I':
+		return 'O';
+	case 'O':
+		return 'U';
+	case 'U':
+		return 'Y';
 	default:
 		return ch;
 	}
