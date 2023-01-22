@@ -10,7 +10,7 @@ int main() {
 	cin >> n;
 	for (int i = 1; i <= n; i++) {
 		if (i % 7 == 0 && i % 11 == 0)
-			cout << "Cheers!";
+			cout << "Wiwat!";
 		else if (i % 11 == 0)
 			cout << "Super!";
 		else if (i % 7 == 0)
