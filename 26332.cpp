@@ -8,6 +8,12 @@ int main() {
 
 	int n;
 	cin >> n;
-
-	cout << (char)((n % 8 == 0) ? 'h' : 'a' + n % 8 - 1) << (n - 1) / 8 + 1;
+	while (n--) {
+		int a, b;
+		cin >> a >> b;
+		cout << a << " " << b << "\n";
+		if (a == 1)cout << b;
+		else cout << a * b - (a - 1) * 2;
+		cout << "\n";
+	}
 }
