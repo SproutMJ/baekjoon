@@ -26,5 +26,17 @@ int main() {
         }
     }
 
-    for_each(v.begin(), v.end(), [](string s)->void{});
+    sort(v.begin(), v.end(), [&](const string &l, const string &r)->bool{
+        if (mp[l] != mp[r]) {
+            return mp[l] > mp[r];
+        }
+        if (l.length() != r.length()) {
+            return l.length() > r.length();
+        }
+        return l < r;
+    });
+
+    for_each(v.begin(), v.end(), [](const string &s)->void {
+        cout << s << "\n";
+    });
 }
