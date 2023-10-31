@@ -11,4 +11,11 @@ int main() {
     cin >> n;
 
     n = pow(4, n);
+    int k = sqrt(n);
+    int sum = 0;
+    for (int i = 0; i < k + 1; i++) {
+        sum += (k + 1);
+    }
+
+    cout << sum;
 }
