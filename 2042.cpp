@@ -1,36 +1,54 @@
 #include <iostream>
 #include <vector>
+#include <numeric>
+#include <algorithm>
 using namespace std;
-typedef long long ll;
-int n, m, k;
-vector<ll> v, tree;
-void update(int idx, ll val) {
-	for (idx; idx <= n; idx += (idx & -idx)) tree[idx] += val;
+vector<long long> arr, tree;
+long long init(long long node, long long start, long long end) {
+    if (start == end) return tree[node] = arr[start];
+    return tree[node] = init(node * 2, start, (start + end) / 2) +
+                        init(node * 2 + 1, (start + end) / 2 + 1,  end);
 }
-ll query(int idx) {
-	ll sum = 0;
-	for (; idx > 0; idx -= (idx & -idx)) sum += tree[idx];
-	return sum;
+long long query(long long node, long long begin, long long end, long long left, long long right) {
+    cout << node << " " << begin << " " << end << " " << left << " " << right << endl;
+    if (left > end || right < begin){
+        cout << "if1" << endl;
+        return 0;
+    }
+    else if (left <= begin && end <= right){
+        cout << "if2" << endl;
+        return tree[node];
+    }
+
+    cout << "if3" << endl;
+    return query(node * 2, begin, (begin + end) / 2, left, right) + query(node * 2 + 1, (begin + end) / 2 + 1, end, left, right);
+}
+void update(long long node, long long begin, long long end, long long idx, long long diff) {
+    if (idx<begin || idx>end)return;
+    tree[node] += diff;
+    if (begin == end)return;
+    update(node * 2, begin, (begin + end) / 2, idx, diff);
+    update(node * 2 + 1, (begin + end) / 2 + 1, end, idx, diff);
 }
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
 
-	cin >> n >> m >> k;
-	v.resize(n + 1), tree.resize(n + 1, 0);
-	for (int i = 1; i <= n; i++) cin >> v[i];
-	for (int i = 1; i <= n; i++) update(i, v[i]);
+    int N, M, K;
+    cin >> N >> M >> K;
+    arr.resize(N + 1);
+    tree.resize(N * 4 + 1);
 
-	for (int i = 0; i < m + k; i++) {
-		ll a, b, c;
-		cin >> a >> b >> c;
-		if (a == 1) {
-			ll diff = c - v[b];
-			v[b] = c;
-			update(b, diff);
-		}
-		else {
-			cout << query(c) - query(b - 1) << "\n";
-		}
-	}
+    for (int i = 1; i <= N; i++) cin >> arr[i];
+    init(1, 1, N);
+    for (int i = 0; i < M + K; i++) {
+        long long a, b, c;
+        cin >> a >> b >> c;
+        if (a == 1) {
+            long long diff = c - arr[b];
+            arr[b] = c;
+            update(1, 1, N, b, diff);
+        }
+        else cout << query(1, 1, N, b, c) << "\n";
+    }
 }
